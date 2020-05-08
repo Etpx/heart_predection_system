@@ -14,3 +14,4 @@ The problem is considered as a binary classification problem. So, we used logist
 ## Web application
 Flask framework was used as the middle ground between the website and the model. The website is a simple HTML and CSS form which takes the input from the user and send it to the model to predict the results. After that, Flask framework will take the result from the model and send it back to the website and calculate reports that shows what are the factors that may affect the person who is not a patient or if he/she is a patient, it will tell him/her what factors affected him/her the most.
 
+![alt text](https://github.com/Etpx/heart_predection_system/blob/master/System%20flow.png "System Flow")
