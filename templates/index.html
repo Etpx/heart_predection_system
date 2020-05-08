@@ -1,0 +1,103 @@
+<html>
+<body>
+    <h3>Heard Disease Prediction</h3>
+
+<div>
+  <form action="{{ url_for('predict')}}" method="POST">
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age">
+    <br>
+
+    <label for="sex">Sex</label>
+    <select id="sex" name="sex">
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+    </select>
+    <br>
+
+    <label for="cp">Chest pain type</label>
+    <select id="cp" name="cp">
+        <option value="1">Typical Angina</option>
+        <option value="2">Atypical Angina</option>
+        <option value="3">non-angina pain </option>
+        <option value="4">asymptomatic</option>
+    </select>
+    <br>
+
+    <label for="trestbps">Resting blood pressure</label>
+    <input type="text" id="trestbps" name="trestbps">
+    <br>
+
+    <label for="chol">Serum cholesterol</label>
+    <input type="text" id="chol" name="chol">
+    <br>
+
+    <label for="fbs">Fasting blood sugar</label>
+    <select id="fbs" name="fbs">
+        <option value="0">Less Than 120</option>
+        <option value="1">More Than 120</option>
+    </select>
+    <br>
+
+    <label for="restecg">Resting electrocardiographic results</label>
+    <select id="restecg" name="restecg">
+        <option value="0">Normal</option>
+        <option value="1">Having ST-T wave abnormality</option>
+        <option value="2">Left Ventricular hypertrophy</option>
+    </select>
+    <br>
+
+    <label for="thalach">Maximum heart rate achieved</label>
+    <input type="text" id="thalach" name="thalach">
+    <br>
+
+    <label for="exang">Exercise induced angina</label>
+    <select id="exang" name="exange">
+        <option value="0">Doesn't have Induce angina</option>
+        <option value="1">have Induced angina</option>
+    </select>
+    <br>
+
+    <label for="oldpeak">ST depression induced by exercise relative to rest</label>
+    <input type="text" id="oldpeak" name="oldpeak">
+    <br>
+
+    <label for="slope">The slope of the peak exercise ST segment</label>
+    <select id="slope" name="slope">
+        <option value="1">Unsloping</option>
+        <option value="2">flat</option>
+        <option value="3">Referable Defect</option>
+    </select>
+    <br>
+
+    <label for="ca">Number of major vessels</label>
+    <select id="ca" name="ca">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <br>
+
+    <label for="thal">thalassemia</label>
+    <select id="thal" name="thal">
+        <option value="1">Normal</option>
+        <option value="2">Fixed Defect</option>
+        <option value="3">Reversible Defect</option>
+    </select>
+    <br>
+
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+    <h2>{{ prediction_text }}</h2>
+
+    <h3>{{ message }}</h3>
+
+    {% for str in possible_disease %}
+    <h3>{{ str }}</h3>
+    {%endfor%}
+</div>
+</body>
+</html>
